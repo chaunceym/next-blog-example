@@ -1,30 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# next
 
-## Getting Started
+## 快速导航
 
-First, run the development server:
+Link 里 a 标签, 实现 js 统一页面转换, 利用 ajax 实现切换页面减少请求, 是导航加快渲染
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## 三种渲染方式
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. 客户端渲染
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+只在浏览器上执行渲染
 
-## Learn More
+2. 静态页面生成(SSG)
 
-To learn more about Next.js, take a look at the following resources:
+Static Site Generation, 解决白屏问题, SEO 问题, 无法生成用户相关内容
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. 服务器渲染(SSR)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+解决白屏, SEO 问题, 可以生成用户相关内容

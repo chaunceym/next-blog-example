@@ -1,0 +1,6 @@
+/*使用 scss 就直接 yarn add sass 改后缀就可*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
