@@ -1,22 +1,30 @@
-import { useArticleInfo } from 'hooks/useArticleInfo'
 import { NextPage } from 'next'
-const PostIndex: NextPage = () => {
-  const { isLoading, isEmpty, articleInfo } = useArticleInfo()
+import { readFileData } from 'lib/posts'
+import React from 'react'
+import Link from 'next/link'
+type Props = {
+  articleInfo: ArticleInfo[]
+}
+const PostIndex: NextPage<Props> = (props) => {
+  const { articleInfo } = props
   return (
     <div>
-      {isLoading ? (
-        <div>正在加载</div>
-      ) : isEmpty ? (
-        <div>暂时没有内容</div>
-      ) : (
-        <ul>
-          {articleInfo.map((item) => (
-            <li key={item.id}>{item.title}</li>
-          ))}
-        </ul>
-      )}
+      <h1>my blog</h1>
+      <hr />
+      {articleInfo.map((p) => (
+        <div key={p.id}>
+          <Link href={`/post/[id]`} as={`/post/${p.id}`}>
+            <a>{p.title}</a>
+          </Link>
+        </div>
+      ))}
     </div>
   )
 }
 
 export default PostIndex
+
+export const getStaticProps = async () => {
+  const articleInfo = await readFileData()
+  return { props: { articleInfo: JSON.parse(JSON.stringify(articleInfo)) } }
+}

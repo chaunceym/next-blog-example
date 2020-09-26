@@ -1,10 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-type ArticleInfo = {
-  id: string
-  title: string
-  date: string
-}
+
 export const useArticleInfo = () => {
   const [articleInfo, setArticleInfo] = useState<ArticleInfo[]>([])
   const [isLoading, setIsLoading] = useState(true)

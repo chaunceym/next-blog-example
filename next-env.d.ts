@@ -5,3 +5,10 @@ declare module '*.jpg' {
   const value: string
   export default value
 }
+type ArticleInfo = {
+  id: string
+  title: string
+  date: string
+  content: string
+  htmlContent: string
+}
