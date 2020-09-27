@@ -17,3 +17,11 @@ Static Site Generation, 解决白屏问题, SEO 问题, 无法生成用户相关
 3. 服务器渲染(SSR)
 
 解决白屏, SEO 问题, 可以生成用户相关内容
+
+## Postgres
+
+docker 下载并启动，进入 postgres
+
+- \l 查看所有数据库
+- \c 连接某一数据库
+- \dt 查看数据库有没有表
